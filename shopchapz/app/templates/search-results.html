@@ -1,0 +1,124 @@
+
+    <section class="upcoming-event-area up-event">
+
+        <div class="container">
+
+            <!-- <div class="section-title ">
+                <div class="form-group search-field">
+                    <input type="text" class="form-control" ng-model="searchedStore"  placeholder="Search">
+                    <button class="changebtn" type="button"></button>
+                </div>
+
+            </div> -->
+            <div class=" text-center">
+                <label class="stores-change ">Search Results</label>
+                <!-- <div class="search-field-box"> -->
+
+            </div>
+
+            <div class="icon-holder-stores text-center">
+                <img src="app/content/images/section-title-icon.png" alt="Awesome Image">
+            </div>
+            <div class="row">
+
+                <div ng-if="x.store.status == 1" ng-repeat="x in storesArray | filter : searchedStore" class="col-md-4 col-sm-4 col-xs-12 single-merchant">
+                    <div class="single-upcoming-event-item">
+                        <div ng-if="x.store.store_logo !== ''" class="img-holder">
+                            <img  ng-src="{{x.store.store_logo}}" alt="Awesome Image">
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content-box">
+                                        <a ng-click="func(x.store.store_id)" href="#/store"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="x.store.store_logo == ''" class="img-holder noImgHolder">
+                            <div class="noImage" >{{x.store.store_name}}</div>
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content-box">
+                                        <a ng-click="func(x.store.store_id)" href="#/store"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content" id="content-1">
+                            <div class="row">
+                                <a ng-click="func(x.store.store_id)" href="#/store">
+                                    <h5 data-toggle="tooltip" data-placement="bottom" title="{{x.store.store_name}}" class="col-xs-6 col-sm-8">{{x.store.store_name}}</h5>
+                                </a>
+                                <script>
+                                        $(document).ready(function(){
+                                            $('[data-toggle="tooltip"]').tooltip();   
+                                        });
+                                        </script>
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == null || x.store.rating == ''">
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </span>
+
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == 5 || x.store.rating > 4.5  ">
+                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                            </span>
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == 4 || x.store.rating <= 4.5 && x.store.rating > 3.5 ">
+                                        <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                        <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                    
+                                                </span>
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == 3 || x.store.rating > 2.5 &&  x.store.rating <= 3.5">
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                        
+                                                    </span>
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == 2 || x.store.rating > 1.5 &&  x.store.rating <= 2.5 ">
+                                                            <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </span>
+                                <span class="col-xs-6 col-sm-4 text-right store-rating" ng-if="x.store.rating == 1 || x.store.rating > 0.5 &&  x.store.rating <= 1.5">
+                                                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                                
+                                                            </span>
+
+
+                            </div>
+                            <p class="product-overflow">{{x.store.product_type}}</p>
+                            <!-- <p>{{x.store.store_description}}</p> -->
+                            <hr class="horizontal-bottom">
+                            <label ng-if="x.store.clicks > 0" class="no-of-clicks">{{x.store.clicks}} </label>
+                            <label ng-if="x.store.clicks == 0" class="no-of-click">No Views</label>
+                            <label ng-if="x.store.clicks == 1" class="no-of-click"> View</label>
+                            <label ng-if="x.store.clicks > 1" class="no-of-click"> Views</label>
+                            <a href="https:{{x.store.store_link}}"><button  class="btn btn-blog">Blogpost</button></a>
+                        </div>
+                        <div class="readmore">
+                            <a ng-click="func(x.store.store_id)" href="#/store"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>

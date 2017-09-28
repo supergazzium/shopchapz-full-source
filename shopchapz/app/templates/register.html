@@ -1,0 +1,64 @@
+<div class="form-container class-due-padding">
+  <div class="container">
+    <div class="form-outer col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+      <div>
+        <h2>Register via Social</h2>
+        <div class ="social-links">
+          <ul>
+            <li class="text-center"><a ng-click = "authenticate('facebook')"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>        
+          </ul>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5 or-hr">
+          <hr>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 or-hr">
+          <p class="text-center">OR</p>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5 or-hr">
+          <hr>
+        </div>
+        <form name="myForm" novalidate ng-submit="register()">
+          <div class="field">
+            <input type="text" name="name" ng-model="newUser.name" ng-minlength="3" placeholder="Name*" required>
+            <span class="error-messages" ng-show="myForm.name.$touched && myForm.name.$invalid">
+                <span ng-show="myForm.name.$error.required">The name is required!</span>
+                <span ng-show="myForm.name.$error.minlength">The name is must be of 3 Characters!</span>
+            </span>
+          </div>
+          <div class="field">
+            <input type="email" name="email" ng-model="newUser.email" placeholder="E-mail*" required>
+            <span class="error-messages" ng-show="myForm.email.$touched && myForm.email.$invalid">
+              <span ng-show="myForm.email.$error.required">Email is required!</span>
+              <span ng-show="myForm.email.$error.email">Invalid email address!</span>
+            </span>
+          </div>
+          <div class="field">
+            <input type="text" name="contact" ng-model="newUser.contact" placeholder="Contact*" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required>
+            <span class="error-messages" ng-show="myForm.contact.$touched && myForm.contact.$invalid">
+              <span ng-show="myForm.contact.$error.required">Phone Number is required!</span>
+              <span ng-show="myForm.contact.$error.pattern">Phone Number must be of 10 characters and a valid number!</span>
+            </span>
+          </div>
+          <div class="field">
+            <input type="password" name="password"  ng-model="newUser.password" placeholder="Password*" required>
+            <span class="error-messages" ng-show="myForm.password.$touched && myForm.password.$invalid">
+              <span ng-show="myForm.password.$error.required">The Password is required.</span>
+             
+            </span>    
+          </div>
+          <div class="field">
+            <input type="password" name="confirm_password" ng-pattern="{{ newUser.password }}" ng-model="newUser.confirm_password" placeholder="Confirm Password*" required>
+            <span class="error-messages" ng-show="myForm.confirm_password.$touched && myForm.confirm_password.$invalid">The password is not matched.</span>    
+          </div>
+          <div class="field">
+            <input type="checkbox" ng-model="privacyTerms" class="privacyTerms" id="privacyTerms" required>
+            <label for="privacyTerms" title="It should be Checked before preceding further!">Accept Privacy & Terms</label> 
+          </div>
+          <button type="submit" ng-disabled="myForm.$invalid" title="Please fill above details to make it active!">Sign Up</button>
+          <div class="form-link"><span>Already have an account? </span><a href="#/login"> Login Now</a></div>
+          <div ><a href="http://www.shopchapz.com/store/#/signup"> SignUp As Store</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

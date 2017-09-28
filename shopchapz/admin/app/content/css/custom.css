@@ -1,0 +1,207 @@
+.navBardemoBasicUsage md-content .ext-content {
+    padding: 50px;
+    margin: 20px;
+    background-color: #FFF2E0; }
+
+.md-toolbar-tools{
+    max-height: 52px;
+}
+.md-theme-indigo{
+    min-height: 52px;
+}
+
+#sidebar{
+    background: red;
+    width: 200px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: -200px;
+    top:0px;
+    transition: left 0.3s linear;
+}
+
+#sidebar-btn{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: 200px;
+    margin-top: -35px;
+}
+.headings{
+    color:#ef473a;
+    text-align:center;
+    font-size: 24px;
+}
+
+#sidebar-btn2{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    margin: 20px;
+}
+#sidebar-btn span{
+    height: 3px;
+    background: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+.md-sidenav-left.ng-isolate-scope {
+    width: 240px;
+}
+h1 {
+    color: #ef473a;
+}
+
+/*================================================
+My custom css
+=================================================*/
+
+.back-footer-last {
+    background-color: #ac7bd4;
+    color:#fff;
+    border-top: 0px solid #fff;
+}
+.bg-color-last {
+    background-color: #fff;
+    color: #ac7bd4;
+}
+.top-navbar {
+    background: #ef473a;
+}
+.navbar-header{
+    background: #ef473a;
+    border-bottom: 1px solid #fff;
+}
+#wrapper {
+    background: #fff !important;
+}
+.active-menu {
+    background-color: #ef473a !important;
+}   
+.sidebar-collapse > .nav > li {
+    border-bottom: 1px solid #ef473a;
+}
+.page-header {
+    color: #ef473a;
+}
+
+/*.col-md-2.col-sm-12.col-xs-12.panel_b {
+    width: 20% !important;
+}*/
+
+.panel-footer.back-footer-last {
+    padding: 0px;
+}
+.panel h3 {
+    color: #818487;
+}
+.panel-footer.back-footer-green{
+    padding: 10px 0px;
+}
+.panel-footer.back-footer-blue {
+    padding: 10px 0;
+}
+.panel-footer.back-footer-red{
+    padding: 0px 2px;
+}
+@media (min-width: 992px){
+    .col-md-2.col-sm-12.col-xs-12.panel_b {
+        width: 20% !important;
+    }
+}
+
+/*************************
+*******DataTable CSS******
+**************************/
+.dataTables_wrapper table thead tr th {
+    background: #ef473a !important;
+}
+.dataTables_wrapper a.paginate_button {
+    background: #ef473a;
+    padding: 4px 8px;
+    margin-left: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #777758;
+}
+.dataTables_wrapper a.paginate_button:hover {
+    background: #ef473a;
+}
+/*************************
+End of DataTable CSS******
+**************************/
+button.md-raised.md-button.md-ink-ripple {
+    background: #fff;
+    color: #ef473a !important;
+    border: 1px solid #e69191;
+}
+.btn-primary, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover:not(.active), .btn-primary[disabled]:hover:not(.active), fieldset[disabled] .btn-primary:hover:not(.active), .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+    background-color: #ef473a;
+    border-color: #ef473a;
+}
+.ng-scope.md-input-message-animation,
+.message.ng-active .ng-scope,
+.md-datepicker-calendar-icon.ng-scope,
+.md-datepicker-expand-triangle.ng-scope,
+tbody.ng-scope,md-backdrop.ng-scope{
+    background: none !important;
+}
+.submitBtn{
+    margin-top: 20px;
+}
+.submitBtn .btn-large{
+    width: 100px;
+    margin-right: 15px;
+}
+.navbg{
+    background-color: #fff;
+}
+li.active a {
+    color: #fff !important;
+}
+.button-common {
+    color:#ef473a;
+    background: #fff;    
+}
+.button-common:hover {
+    color: #fff;
+    background: #ef473a;    
+}
+.button-all {
+    color: #ef473a;
+}
+.error {
+    color: red;
+    margin-left:2px;
+}
+.message-show {
+    height: 110px;
+    
+    
+    
+    text-align: center;
+    margin: 0 auto;
+    background: #ecc6c3;
+    color: #fff;
+    
+}
+.loader {
+    height: 100%;
+    width: 100%;
+    z-index: 111;
+    position: fixed;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.loader h1 {
+    text-align: center;
+       
+}

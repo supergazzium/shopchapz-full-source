@@ -1,0 +1,44 @@
+<div class="form-container class-due-padding">
+  <div class="container">
+    <div class="form-outer col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+      <div>
+        <h2>Login via Social</h2>
+        <div class ="social-links">
+          <ul>
+            <li class="text-center"><a ng-click = "authenticate('facebook')"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>        
+          </ul>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5 or-hr">
+          <hr>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 or-hr">
+          <p class="text-center">OR</p>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-5 or-hr">
+          <hr>
+        </div>
+        <form name="myForm" ng-submit="login()" novalidate>
+          <div class="field">
+            <input type="email" name="email" ng-model="user.email" placeholder="E-mail*" required>
+            <span class="error-messages" ng-show="myForm.email.$touched && myForm.email.$invalid">
+              <span ng-show="myForm.email.$error.required">Email is required!</span>
+              <span ng-show="myForm.email.$error.email">Invalid email address!</span>
+            </span>
+          </div>
+          <div class="field">
+            <input type="password" ng-model="user.password" placeholder="Password*" required>    
+          </div>
+          <div class="field">
+            <input type="checkbox" ng-model="keepMeLoggedIn" id="keepMeLoggedIn" required>
+            <label for="keepMeLoggedIn" title="It should be Checked before preceding further!">Keep me logged in.</label>      
+          </div>
+         <!--  <button type="submit" ng-disabled="myForm.$invalid" title="Please fill above details to make it active!">Login</button> -->
+           <button type="submit" title="Please fill above details to make it active!">Login</button>
+          <div class="form-link"><span>Don't have account?</span> <a href="#/register"> SignUp Now</a></div>
+           <div class="form-link"><a href="#/forgotpassword">Forgot Password?</a></div>
+           <div class="form-link"><a href="http://www.shopchapz.com/store/#/login">Login As Store</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

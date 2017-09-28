@@ -1,0 +1,544 @@
+//test file.
+
+doctype html
+html
+    head
+        link(href='/stylesheets/style.css',rel='stylesheet')
+    body
+
+
+    h3 Super-Admin
+
+        form(action='/super_admin_login',method='post')
+            h3 Login Page
+            .parameter Description
+            p This API is used to super-admin login.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /super_admin_login
+            .parameter Input Parameters
+            label email:
+            input(type='text',name='email')
+            label password:
+            input(type='text',name='password')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/active_inactive_store',method='post')
+            h3 Activeate or Deactivate store
+            .parameter Description
+            p This API is used to Activeate or Deactivate store.
+            p Status : 0 to inactive a store , 1 to active a store
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /active_inactive_store
+            .parameter Input Parameters
+            label status:
+            input(type='text',name='status')
+            label store_id:
+            input(type='text',name='store_id')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+        
+        form(action='/all_users',method='post')
+            h3 Get list of all users
+            .parameter Description
+            p This API is used to Get list of all users.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /all_users
+            .parameter Input Parameters
+            label access_token:
+            input(type='text',name='access_token')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+            
+
+    h3 Admin
+
+        form(action='/signup',method='post')
+            h3 Signup Page
+            .parameter Description
+            p This API is used to register a new admin.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /signup
+            .parameter Input Parameters
+            label email:
+            input(type='text',name='email')
+            label password:
+            input(type='password',name='password')
+            label store_name:
+            input(type='text',name='store_name')
+            label id:
+            input(type='text',name='id')
+            label owner_phone_number:
+            input(type='text',name='owner_phone_number')
+            input(type='submit',value='Login')
+            br
+            br
+
+
+        form(action='/admin_login',method='post')
+            h3 Admin Login
+            .parameter Description
+            p This api is used to Admin Login.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /admin_login
+            .parameter Input Parameters 
+            label email :
+            input(type='text',name='email')
+            label password :
+            input(type='password',name='password')
+            input(type='submit',value='Login')
+            <br>
+            <br>
+
+
+        form(action='/change_password', method='post')
+            h3 Change Password
+            .parameter Description
+            p This API is used to Change Password.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /change_password
+            .parameter Input Parameters(access_token:abcd)
+            label access_token:
+            input(type='text', name='access_token')
+            label old_password:
+            input(type='text', name='old_password')
+            label new_password:
+            input(type='text', name='new_password')
+            input(type='submit',value='change')
+            br
+            br
+
+
+        form(action='/forgot_password', method='post')
+            h3 Forgot Password
+            .parameter Description
+            p This API is used for Forgot Password.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /forgot_password
+            .parameter Input Parameters
+            label email:
+            input(type='text', name='email')
+            input(type='submit',value='submit')
+            br
+            br
+
+        form(action='/update_password',method='post')
+            h3 Update Forgot Password
+            .parameter Description
+            p This API is used to Update Password.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_password
+            .parameter Input Parameters
+            label verification_token:
+            input(type='text',name='verification_token')
+            label new_password:
+            input(type='text',name='new_password')
+            input(type='submit',value='Update Password')
+            br
+            br
+
+
+        form(action='/upload_image',method='post',enctype='multipart/form-data')
+            h3 Upload Images Here
+            .parameter Description
+            p This API is used to upload image.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /upload_image
+            .parameter Input Parameters
+            label upload_image:
+            input(type='file',name='upload_image')
+            input(type='submit',value='Upload')
+            br
+            br
+
+
+        form(action='/edit_profile',method='post')
+            h3 Edit Profile Here
+            .parameter Description
+            p This API is used to Edit Profile.
+            p Seprate images by ##.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /edit_profile
+            .parameter Input Parameters
+            label user_id:
+            input(type='text',name='user_id')
+            label store_id:
+            input(type='text',name='store_id')
+            label store_name:
+            input(type='text',name='store_name')
+            label store_owner_name:
+            input(type='text',name='store_owner_name')
+            label product_type:
+            input(type='text',name='product_type')
+            label id:
+            input(type='text',name='id')
+            label sub_district:
+            input(type='text',name='sub_district')
+            label district:
+            input(type='text',name='district')
+            label owner_phone_number:
+            input(type='text',name='owner_phone_number')
+            label store_phone_number:
+            input(type='text',name='store_phone_number')
+            label line_id:
+            input(type='text',name='line_id')
+            label email:
+            input(type='text',name='email')
+            label facebook_url:
+            input(type='text',name='facebook_url')
+            label instagram_id:
+            input(type='text',name='instagram_id')
+            label website:
+            input(type='text',name='website')
+            label store_description:
+            input(type='text',name='store_description')
+            label store_link:
+            input(type='text',name='store_link')
+            label store_logo:
+            input(type='text',name='store_logo')
+            label image_id:
+            input(type='text',name='image_id')
+            label store_images:
+            input(type='text',name='store_images')
+            input(type='submit',values='Submit')
+            <br>
+            <br>
+
+
+        form(action='/get_store_details',method='post')
+            h3 get store details
+            .parameter Description
+            p This API is used to get store details.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /get_store_details
+            .parameter Input Parameters
+            label access_token:
+            input(type='text',name='access_token')
+            label store_id:
+            input(type='text',name='store_id')
+            input(type='submit',values='Submit')
+            <br>
+            <br>
+
+        form(action='/delete_image',method='post')
+            h3 delete image
+            .parameter Description
+            p This API is used to delete image.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete_image
+            .parameter Input Parameters
+            label image_id:
+            input(type='text',name='image_id')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+
+    body
+
+    h3 User
+
+        form(action='/list_of_all_stores',method='post')
+            h3 get list of all stores
+            .parameter Description
+            p This API is used to get list of all stores.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /list_of_all_stores
+            .parameter Input Parameters
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/user_signup',method='post')
+            h3 user signup
+            .parameter Description
+            p This API is used to register new User.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /user_signup
+            .parameter Input Parameters
+            label email:
+            input(type='text',name='email')
+            label password:
+            input(type='text',name='password')
+            label name:
+            input(type='text',name='name')
+            label contact:
+            input(type='text',name='contact')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/update_profile',method='post')
+            h3 user update_profile
+            .parameter Description
+            p This API is used to update profile of user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /update_profile
+            .parameter Input Parameters
+            label user_id:
+            input(type='text',name='user_id')
+            label name:
+            input(type='text',name='name')
+            label contact:
+            input(Type='text',name='contact')
+            label address:
+            input(type='text',name='address')
+            label country:
+            input(type='text',name='country')
+            label state:
+            input(type='text',name='state')
+            label city:
+            input(type='text',name='city')
+            input(Type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/user_login',method='post')
+            h3 User Login
+            .parameter Description
+            p This api is used to User Login.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /user_login
+            .parameter Input Parameters 
+            label email :
+            input(type='text',name='email')
+            label password :
+            input(type='password',name='password')
+            input(type='submit',value='Login')
+            <br>
+            <br>
+
+
+        form(action='/ratings',method='post')
+            h3 Add/Update Rating to store
+            .parameter Description
+            p This api is used to Add/Update rating to a store.
+            p Status 0 to add rating, 1 to update rating
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /ratings
+            .parameter Input Parameters
+            label status:
+            input(type='text',name='status')
+            label user_id:
+            input(type='text',name='user_id')
+            label store_id:
+            input(type='text',name='store_id')
+            label rating:
+            input(type='text',name='rating')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+
+        form(action='/comments',method='post')
+            h3 Add/Update comment to store
+            .parameter Description
+            p This api is used to Add/Update comment to a store.
+            p Status 0 to add comment, 1 to update comment
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /comments
+            .parameter Input Parameters
+            label status:
+            input(type='text',name='status')
+            label user_id:
+            input(type='text',name='user_id')
+            label store_id:
+            input(type='text',name='store_id')
+            label comment:
+            input(type='text',name='comment')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/get_rating_and_comment',method='post')
+            h3 get ratings and comment of all users of a store
+            .parameter Description
+            p This api is used to get ratings and comments of all users of a store.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /get_rating_and_comment
+            .parameter Input Parameters
+            label store_id:
+            input(type='text',name='store_id')
+            input(Type='submit',value='Submit')
+            <br>
+            <br>
+
+        form(action='/contact_us',method='post')
+            h3 contact_us
+            .parameter Description
+            p This API is used to contact_us.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /contact_us
+            .parameter Input Parameters
+            label name:
+            input(type='text',name='name')
+            label email:
+            input(type='text',name='email')
+            label contact:
+            input(type='text',name='contact')
+            label message:
+            input(type='text',name='message')
+            input(type='submit',value='Submit')
+            <br>
+            <br>
+
+
+        //- form(action='/search',method='post')
+        //-     h3 search
+        //-     .parameter Description
+        //-     p This API is used to search a store.
+        //-     .contain
+        //-         .parameter Request Method
+        //-         .requestmethod POST
+        //-     .contain
+        //-         .parameter Request URL
+        //-         .requesturl /search
+        //-     .parameter Input Parameters
+        //-     label text:
+        //-     input(type='text',name='text')
+        //-     input(type='submit',values='Submit')
+        //-     <br>
+        //-     <br>
+
+
+        form(action='/clicks',method='post')
+            h3 add clicks
+            .parameter Description
+            p This API is used to add clicks to a store.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /clicks
+            .parameter Input Parameters
+            label store_id:
+            input(type='text',name='store_id')
+            input(type='submit',value='Submit')
+            br
+            br
+
+
+        form(action='/get_user_details',method='post')
+            h3 get user details
+            .parameter Description
+            p This API is used to get details of a user.
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /get_user_details
+            .parameter Input Parameters
+            label user_id:
+            input(type='text',name='user_id')
+            input(type='submit',value='Submit')
+            br
+            br
+
+
+        form(action='/delete',method='post')
+            h3 delete
+            .parameter Description
+            p This API is used to delete a store or user.
+            p status:  0 to delete store, 1 to delete user
+            p if status is 0 id will be store_id, if status is 1 id will be user_id
+            .contain
+                .parameter Request Method
+                .requestmethod POST
+            .contain
+                .parameter Request URL
+                .requesturl /delete
+            .parameter Input Parameters
+            label access_token:
+            input(type='text',name='access_token')
+            label status:
+            input(type='text',name='status')
+            label id:
+            input(type='text',name='id')
+            input(type='submit',value='Submit')
+            br
+            br

@@ -1,0 +1,70 @@
+<!-- <div  class="login-background" data-ng-controller="signup as vm">﻿ -->
+        <div  class="login-background" ng-controller="signup">﻿
+        <form name="signupForm" novalidate>
+    
+            <div class="signup-form-main">
+                <div class="out-logo-signup">
+                    <img src="app/content/images/chapz.jpg" alt=""/>
+                </div>
+   
+                
+                <div class="signup-form">
+                    <div class="signupform"><h1>SignUp Form<i class="fa fa-times" aria-hidden="true"></i></h1></div>
+                    <div class="form-group join">
+                        <input input="email" name="email" type="text" class="form-control signup-input" placeholder="Email" ng-model="vm.email" ng-pattern="/^.+@.+\..+$/" required>
+                                    
+    
+                        <div class="message set-font-11" ng-messages="signupForm.email.$error">  
+                            <div ng-message-exp="['required','pattern']">
+                                Valid e-mail address required.
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="form-group sign-status">
+                            <input type="text" class="form-control signup-input" placeholder="Store Name" name="storename" ng-model="vm.storename"  required>
+                 
+                            <div class="message set-font-11" ng-messages="signupForm.storename.$error">  
+                                <div  ng-message-exp="['required']">
+                                    Store Name required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group sign-status">
+                                <input type="text" class="form-control signup-input" placeholder="13 Digits ID No." name="digits" ng-model="vm.digits"  required>
+                                
+                                <div class="message set-font-11" ng-messages="signupForm.digits.$error">  
+                                    <div  ng-message-exp="['required']">
+                                        13 Digits ID required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group sign-status">
+                                    <input type="text" class="form-control signup-input" placeholder="Phone No." name="phoneno" ng-model="vm.phoneno"  required>
+                                    
+                                    <div class="message set-font-11" ng-messages="signupForm.phoneno.$error">  
+                                        <div ng-message-exp="['required']">
+                                            Phone No. required.
+                                        </div>
+                                    </div>
+                                </div>
+                    <div class="form-group sign-status">
+                        <input type="password" class="form-control signup-input" placeholder="Password" name="password" ng-model="vm.password"  required>
+                        
+                        <div class="message set-font-11" ng-messages="signupForm.password.$error">  
+                            <div ng-message-exp="['required']">
+                                Password required.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a><button  type="button" ng-click=""  ng-disabled="signupForm.$invalid" class="log-btn signup-btn"  ><b>Sign Up</b></button></a>
+                    <div class="">
+                            <h6>Already have account? <a data-ui-sref="login">Login Now</a></h6>
+                            <a href="http://192.168.1.2:8888/shopchapz/#/register" class="point-the-pointer">SignUp with User</a>
+                    <!-- <a href="#!login"><label class="ec-mar-top ec-cursor">Login</label></a> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,68 @@
+<div class="contact-area class-due-padding" data-ng-controller="contact as vm">
+  <div class="container">
+    <div class="contact-outer-area row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="full-address">
+          <div class="address-details">
+            <h3>ShopChapz</h3>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <p>204 Sukhumvit Road,</p>
+                <p>Samutprakarn 10270,</p>
+                <p>Thailand.</p>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <p><i class="fa fa-commenting-o" aria-hidden="true"></i><a href="https://line.me/R/ti/p/%40chapz" target="_blank"> Message us on Line</a></p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> 065-0266-794, (+66)65-0255794</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:shopchapz@gmail.com"> shopchapz@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="address-map">
+            <h3>Find Us Here</h3>
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3877.791254397313!2d100.59217081402637!3d13.609557604242392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1503382652816" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+          <form name="myForm" novalidate >
+            <div class="field">
+              <input type="text" name="name" ng-model="user.name" placeholder="Name*" required>
+              <span class="error-messages" ng-show="myForm.name.$touched && myForm.name.$invalid">
+                <span ng-show="myForm.name.$error.required">The name is required!</span>
+            </span>
+            </div>
+            <div class="field">
+              <input type="email" ng-model="user.email" name="email" ng-model="user.email" placeholder="E-mail*" required>
+              <span class="error-messages" ng-show="myForm.email.$touched && myForm.email.$invalid">
+                <span ng-show="myForm.email.$error.required">Email is required!</span>
+                <span ng-show="myForm.email.$error.email">Invalid email address!</span>
+              </span>
+            </div>
+            <div class="field">
+              <input type="text" name="contact" ng-model="user.contact" placeholder="Contact Number" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required>
+              <span class="error-messages" ng-show="myForm.contact.$touched && myForm.contact.$invalid">
+                <span ng-show="myForm.contact.$error.required">Phone Number is required!</span>
+                <span ng-show="myForm.contact.$error.pattern">Phone Number must be of 10 characters and a valid number!</span>
+              </span>
+            </div>
+            <div class="field">
+              <textarea name="message" ng-model="user.message" placeholder="Message" required></textarea >
+                <span class="error-messages" ng-show="myForm.message.$touched && myForm.message.$invalid">
+                  <span ng-show="myForm.message.$error.required">Description is required!</span>
+              </span>
+            </div>
+            <div ng-show="vm.updationerror" class="alert alert-danger"> </div>
+            <div ng-show="vm.updationsuccess" class="alert alert-success"> </div>
+            <button ng-show='vm.showProcessing' class="submit-button" ng-click="contactUs()" ng-disabled="myForm.$invalid" type="button" >Submit</button>
+            <button  type="button" class="submit-button" ng-hide='vm.showProcessing'><b>Processing..</b></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

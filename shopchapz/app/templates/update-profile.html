@@ -1,0 +1,60 @@
+<div class="form-container class-due-padding" data-ng-controller="updateprofile as vm">
+  <div class="container">
+    <div class="form-outer col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+      <div>
+        <h2>Update Profile</h2>
+        <form name="myForm" ng-submit="updateprofile()" novalidate>
+          
+          <div  class="field">
+              <input type="text" name="name" ng-model="user.name" ng-minlength="3" placeholder="Name*" >
+              <span class="error-messages" ng-show="myForm.name.$touched && myForm.name.$invalid">
+                <span ng-show="myForm.name.$error.required">The name is required!</span>
+                <span ng-show="myForm.name.$error.minlength">The name is must be of 3 Characters!</span>
+            </span>
+            </div>
+            <!-- ng-if="responseForUser[0].name == '' || responseForUser[0].name == null " -->
+          <div  class="field">
+              <input type="text" name="contact" ng-model="user.contact" placeholder="Contact*"  ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required>
+              <span class="error-messages" ng-show="myForm.contact.$touched && myForm.contact.$invalid">
+                <span ng-show="myForm.contact.$error.required">Phone Number is required!</span>
+                <span ng-show="myForm.contact.$error.pattern">Phone Number must be of 10 characters and a valid number!</span>
+              </span>
+            </div>
+            <!-- ng-if="responseForUser[0].contact == '' || responseForUser[0].contact == null " -->
+          <div  class="field">
+              <input type="text" ng-model="user.address" name="address" placeholder="Address" value="" required>
+              <span class="error-messages" ng-show="myForm.address.$touched && myForm.address.$invalid">
+                <span ng-show="myForm.address.$error.required">Address is required!</span>
+              </span>
+            </div>
+            <!-- ng-if="responseForUser[0].address == '' || responseForUser[0].address == null " -->
+          <div  class="field">
+              <input type="text" ng-model="user.city" name="city" placeholder="City" value="" required>
+              <span class="error-messages" ng-show="myForm.city.$touched && myForm.city.$invalid">
+                <span ng-show="myForm.city.$error.required">City is required!</span>
+              </span>
+            </div>
+            <!-- ng-if="responseForUser[0].city == '' || responseForUser[0].city == null " -->
+          <div class="field">
+              <input type="text" ng-model="user.state" name="state" placeholder="State" value="" required>
+              <span class="error-messages" ng-show="myForm.state.$touched && myForm.state.$invalid">
+                <span ng-show="myForm.state.$error.required">State is required!</span>
+              </span>
+            </div>
+            <!-- ng-if="responseForUser[0].city == '' || responseForUser[0].city == null " -->
+          <div class="field">
+              <input type="text" ng-model="user.country" name="country" placeholder="Country" value="" required>
+              <span class="error-messages" ng-show="myForm.country.$touched && myForm.country.$invalid">
+                <span ng-show="myForm.country.$error.required">Country is required!</span>
+              </span>
+            </div>
+            <!-- ng-if="responseForUser[0].country == '' || responseForUser[0].country == null "  -->
+          <div ng-show="vm.updationerror" class="alert alert-danger"> </div>
+          <div ng-show="vm.updationsuccess" class="alert alert-success"> </div>
+          <button ng-show="vm.showProcessing" ng-disabled="myForm.$invalid" title="Please fill above details to make it active!" type="submit">Update</button>
+          <button  type="button" class="log-btn signup-btn" ng-hide='vm.showProcessing'><b>Processing..</b></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

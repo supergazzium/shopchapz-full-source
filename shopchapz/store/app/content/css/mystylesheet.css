@@ -1,0 +1,449 @@
+div#page-wrapper {
+    margin: 0px;
+}
+/*    body{
+    background-image: url(app/content/images/mama_beba.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+    .login-background {
+        background-image: url(../images/back1.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: cover;            
+        padding-bottom: 10%;
+        height: 100%;
+        width: 100%;
+        /* position: absolute; */
+        top: 0;
+        bottom: 0;
+}
+.forgot-background {
+    background-image: url(../images/back1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;            
+    padding-bottom: 4%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.login-form-main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.loginform h1 {
+    text-align: left;
+}
+.fa {
+    float: right;
+}
+.login-form h1 {
+    font-size: 14px;
+    background-color: rgb(32,143,180);
+    color: #fff;
+    margin-top: 0px;
+    margin-left: -11px;
+    margin-right: -11px;
+    padding: 20px;
+    margin-bottom: 21px;
+}
+button.log-btn.login-btn:hover {
+    opacity: 0.9;
+}
+.login-form-main {
+    width: 420px;
+    padding: 13px 30px 26px;
+    margin: 0 auto;
+    background: rgba(255, 244, 244, 0.89);
+    box-shadow: 0px 0px 3px #949393;
+    margin-top: 64px;
+}
+.login-form {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0 11px 21px;
+}
+.form-group{
+    position: relative;
+    margin-bottom:15px;
+}
+.form-control{
+    width:100%;
+    height:50px;
+    border:none;
+    padding:5px 7px 5px 15px;
+    background:#eee;
+    color:#666;
+    border:2px solid #ddd;
+   
+}
+.form-group .fa{
+    position: absolute;
+    right:15px;
+    top:17px;
+    color:#999;
+}
+
+.log-status.wrong-entry .form-control, .wrong-entry .form-control + .fa {
+    border-color: #ed1c24;
+    color: #ed1c24;
+}
+.log-btn {
+    background: rgb(32,143,180);
+    display: inline-block;
+    width: 39%;
+    font-size: 14px;
+    height: 32px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+}
+
+.link {
+    text-decoration: none;
+    color: #a5a5a5;
+    float: right;
+    font-size: 12px;
+    margin-top: 7px;
+}
+a:hover, a:focus {
+    /* color: #ef473a;
+    text-decoration: underline; */
+}
+
+.alert {
+    float: none;
+}
+.login-img{
+width: 15px;
+position: absolute;
+top: 17px;
+right: 10px;
+}
+.out-logo{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.out-logo img{
+    width: 85px;
+}
+
+
+/******************************************** signup **************************************************/
+
+
+.signup-form-main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.signupform h1 {
+    text-align: left;
+}
+
+.signup-form h1 {
+    font-size: 14px;
+    background-color: rgb(32,143,180);
+    color: #fff;
+    margin-top: 0px;
+    margin-left: -11px;
+    margin-right: -11px;
+    /* width: 290px; */
+    /* padding: 20px; */
+    /* margin-bottom: 21px; */
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.signup-form-main {
+    width: 420px;
+    /* padding: 13px 30px 0px; */
+    padding: 7px 26px 10px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 3px #949393;
+    background: rgba(255, 244, 244, 0.89);
+    /* margin-top: 95px; */
+}
+.signup-form {
+    margin: 0 auto;
+    background-color: #fff;
+    /* padding: 0 11px 21px; */
+    padding: 0 11px 10px;
+}
+
+.signup-img{
+width: 15px;
+position: absolute;
+top: 17px;
+right: 10px;
+}
+.out-logo-signup{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.out-logo-signup img{
+    width: 85px;
+}
+.form-group.join {
+    margin-bottom: 7px;
+}
+input.form-control.signup-input {
+    height: 44px !important;
+}
+.form-group.sign-status {
+    margin-bottom: 7px;
+}
+.signup-btn{
+    width: 100%;
+}
+.login-btn{
+    width: 100%;
+}
+.set-font-11{
+    font-size: 11px;
+}
+
+.ec-cursor{
+    cursor: pointer;
+}
+
+.point-the-pointer{
+    cursor: pointer;
+}
+
+.wrong-email-pass{
+    padding: 5px;
+    font-size: 10px;
+    float: right;
+    color: red;
+}
+
+.right-float{
+    float: right;
+}
+
+@media(max-width:420px){
+    .signup-form-main {
+        width: 360px;
+    }
+    .login-form-main {
+        width: 360px;
+    }
+}
+
+
+/***************************************** homepage ***********************************************************/
+
+
+.top-navbar{
+    background-color: rgb(32,143,180);
+    margin-bottom: 0px;
+}
+.mysh{
+    padding: 6px 5px;
+    height: 60px;
+}
+.shop-text{
+    font-size: 2em;
+    text-align: center;
+    color: aliceblue;
+    padding: 7px 2px 2px 2px;
+}
+.button-logout{
+    margin-top: 2px;
+    padding: 10px 28px 0px 7px;
+    text-align: right;
+}
+.ec-margin-top-6{
+    margin-top: 6px !important;
+}
+.ec-border{
+    border-right: 1px solid #ccc;
+}
+
+label.file2 {
+    padding: 12px 12px 12px 12px;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        text-align: right;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+ }
+ label.file2 input {
+   
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.trash-icon {
+    padding: 0px;
+    /* border: 1px solid red; */
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    /* top: -12px; */
+    top: -7px;
+    left: 121px;
+    /* color: red; */
+}
+.overflow-atore-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.trash-icon-logo{
+    left: 106px;
+}
+.border-red-2{
+    border: 1px solid black;
+}
+.p-l-0, .p-r-0{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.logo-width{
+    width: 8em;
+}
+.relevant-images-width{
+   
+    width: 9em;
+}
+.click-font{
+    padding: 25px 20px 25px 20px;
+    font-size: 1.2em;
+}
+.click-font-logo{
+    padding: 12px 12px 12px 12px;
+    font-size: 1.1em
+}
+.border-radius-20{
+    border-radius: 20px;
+}
+.icon-trash{
+    padding: 5px 21px 6px 7px;
+    border-radius: 11px;
+    border: 1px solid black;
+}
+.view-button{
+    text-align: center;
+    padding: 30px 2px 2px 2px;
+    margin-top: 15px;
+}
+.view-button-color{
+    color: #ffffff;
+    background-color: rgb(32,143,180);
+}
+.amazon-font{
+font-size: 25px !important;
+}
+.align-right-text{
+    text-align: right;
+    margin-top: -12px;
+}
+.save-btn-padding{
+    padding-top: 60px;
+}
+.save-btn-color{
+    margin-left: -5px;
+    color: white;
+    background-color: rgb(32,143,180);
+}
+.ec-bottom-margin{
+    margin-bottom: 30px;
+}
+.ec-text-hide{
+    visibility: hidden;
+    /* display: none; */
+}
+label.file2.ec-no-cursor{
+    cursor: unset;
+}
+.fixed-img{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-radius: 21px;
+    padding: 2px;
+    /* height: 100%; */
+}
+.img-border-radius{
+    border-radius: 19px;
+}
+.ec-align-text{
+    text-align: center;
+}
+.ec-margin-top-30{
+    margin-top: 30px;
+}
+.change-pass-btn{
+    background: rgb(32,143,180);
+    display: inline-block;
+    font-size: 17px;
+    height: 43px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+}
+
+.resize-description{
+    resize: vertical;
+}
+
+.review-name{
+    font-size: 1.2em;
+    color: rgb(34,143,180);
+}
+.review-date{
+    float: right;
+    font-style: italic;
+}
+.rating-text{
+    color: rgb(34,143,180);
+    float: right;
+    margin-top: -3px;
+    padding: 0px 9px 0px 0px;
+    margin-right: 3px;
+}
+.shop-status{
+    color: #008000;
+}
+.shop-status-inactive{
+    color: #ff0000;
+}
+.ec-fa-color{
+    color:rgb(34,143,180);
+}
+md-content.md-default-theme, md-content {
+   
+    background-color:#ffffff
+}
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: rgb(34,143,180);
+    background: rgb(34,143,180);
+}
+.ec-mar-top{
+    margin-top: 7px;
+}
+
+@media (min-width:768px){
+    .pad-left{
+        padding-left: 8px;
+    }
+}
+@media (max-width:768px){
+    .ec-border {
+        border-right:none;
+    }
+}

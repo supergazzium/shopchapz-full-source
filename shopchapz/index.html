@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Shopchapz</title>
+        <!--<base href="/http://54.172.109.78:4000">-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="app/content/css/angular-material.min.css" rel="stylesheet" />
+        <link href="app/content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="app/content/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet prefetch' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+        <link href="app/content/css/animate.min.css" rel="stylesheet" />
+        <link href="app/content/css/style.css" rel="stylesheet" type="text/css"/>
+
+        <!--<link href="app/content/css/ion.rangeSlider.skinModern.css" rel="stylesheet" />-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+        <script src="app/components/scripts/jquery-2.1.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    </head>
+    <body>
+        <div ui-view=""></div>
+        <div ui-view="header" autoscroll="true"></div>
+        <div ui-view="content"></div>
+        <div ui-view="footer"></div>
+        <span data-cc-scroll-to-top></span>
+
+        <!-- Scripts -->
+        <script src="app/components/scripts/angular.js"></script>
+        <script src="app/components/scripts/angular-animate.js"></script>
+        <script src="app/components/scripts/angular-resource.js"></script>
+
+        <script src="app/components/bootstrap-ui/ui-bootstrap.min.js"></script>
+        <script src="app/components/scripts/bootstrap.js"></script>
+
+        <script src="app/components/scripts/ui-grid.js"></script>
+        <script src="app/components/scripts/angular-ui-router.js"></script>
+        <script src="app/components/scripts/ngStorage.js"></script>
+        <script src="app/components/scripts/rating.js"></script>
+        <script src="app/components/scripts/angular-socialshare.js"></script>
+        
+
+
+
+        <!-- Angular Material Library -->
+        <script src="app/components/scripts/angular-aria.min.js"></script>
+        <script src="app/components/scripts/angular-messages.min.js"></script>
+        <script src="app/components/scripts/angular-material.min.js"></script>
+
+        <!-----Bootstrapping(main module)------>
+        <script src="app/app.js"></script>
+        <script src="app/config.js"></script>
+        <script src="app/angular-sanitize.js"></script>
+
+        <!-----Services file------>
+        <script src="app/js/services/loginRegisterService.js" type="text/javascript"></script>
+        <script src="app/js/services/merchantService.js" type="text/javascript"></script>
+        <script src="app/js/services/satellizer.js" type="text/javascript"></script>
+       
+
+
+        <!-----Directive file------>
+        <script src="app/js/directives/googleautocomplete.js"></script>
+        <script src="app/js/directives/headerMenu.js"></script>
+        <script src="app/js/directives/myEnter.js"></script>
+
+        <!-----Routes file------>
+        <script src="app/routes.js"></script>
+
+        <!-----controller files------>
+        <script src="app/js/controllers/header.js" type="text/javascript"></script>
+        <script src="app/js/controllers/footer.js" type="text/javascript"></script>
+        <script src="app/js/controllers/login.js" type="text/javascript"></script>
+        <script src="app/js/controllers/register.js" type="text/javascript"></script>
+        <script src="app/js/controllers/dashboard.js" type="text/javascript"></script>
+         <script src="app/js/controllers/store.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/forgot-password.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/change-password.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/updatepassword.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/updateprofile.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/contact.js" type="text/javascript"></script> 
+         <script src="app/js/controllers/search.js" type="text/javascript"></script> 
+
+
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-datatables/0.5.5/angular-datatables.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      
+    </body>
+</html>

@@ -1,0 +1,80 @@
+
+@font-face { 
+    font-family: bupa;
+    src: url('../fonts/Rodina-Regular.eot?#iefix'); 
+}
+@font-face { 
+    font-family: bupa;
+    src: url('../fonts/Rodina-Regular.ttf'); 
+}
+@font-face { 
+    font-family: bupa;
+    src: url('../fonts/Rodina-Regular.otf'); 
+}
+body {
+    margin: 0;
+    font-family: bupa !important;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+
+
+
+/*------------ css for menu dropdown-------*/
+.menuBardemoBasicUsage .page-container {
+    padding: 32px; 
+}
+
+.menuBardemoBasicUsage .page {
+    margin: 0 auto;
+    padding: 24px;
+    max-width: 680px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25); 
+}
+
+.menuBardemoBasicUsage .page h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 0;
+    font-weight: normal; 
+}
+
+.menuBardemoBasicUsage .page p {
+    line-height: 1.6rem; 
+}
+/*------------ css for menu dropdown-------*/
+
+/*------------ custom css-------*/
+.bupa-header{
+    max-height: 300px;
+    overflow: hidden;
+}
+.bupa-header img{
+    width: 100%;
+}
+md-toolbar.md-menu-toolbar {
+    background: #26849a;
+    color: #fff;
+}
+md-toolbar .md-menu {
+    text-align: center;
+}
+md-menu-bar button {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 64px;
+}
+md-menu-bar.md-default-theme md-menu.md-open > button, md-menu-bar md-menu.md-open > button, md-menu-bar.md-default-theme md-menu > button:focus, md-menu-bar md-menu > button:focus {
+    outline: none;
+    background: #176071;
+}
+.md-open-menu-container.md-active {
+    width: 100%;
+    left: 0px !important;
+}
+
+

@@ -1,0 +1,74 @@
+<!-- <div  class="login-background" data-ng-controller="signup as vm">﻿ -->
+        <div  class="login-background" ng-controller="signup as vm">﻿
+        <form name="signupForm" novalidate>
+    
+            <div class="signup-form-main">
+                <div class="out-logo-signup">
+                    <img src="app/content/images/chapz.jpg" alt=""/>
+                </div>
+   
+                
+                <div class="signup-form">
+                    <div class="signupform"><h1>SignUp Form<i class="fa fa-times" aria-hidden="true"></i></h1></div>
+                    <div class="form-group join">
+                        <input input="email" name="email" type="text" class="form-control signup-input" placeholder="Email" ng-model="user.email" ng-pattern="/^.+@.+\..+$/" required>
+                                    
+    
+                        <div class="message set-font-11" ng-messages="signupForm.email.$error">  
+                            <div ng-message-exp="['required','pattern']">
+                                Valid e-mail address required.
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="form-group sign-status">
+                            <input type="text" class="form-control signup-input" placeholder="ชื่อร้านค้า" name="storename" ng-model="user.store_name"  required>
+                 
+                            <div class="message set-font-11" ng-messages="signupForm.storename.$error">  
+                                <div  ng-message-exp="['required']">
+                                    Store Name required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group sign-status">
+                                <input type="text" class="form-control signup-input" placeholder="เลขบัตรประชาชน" minlength="13" name="digits" ng-model="user.id"  required>
+                                
+                                <div class="message set-font-11" ng-messages="signupForm.digits.$error">  
+                                    <div  ng-message-exp="['required','minlength']">
+                                        13 Digits ID required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group sign-status">
+                                    <input type="text" class="form-control signup-input"  placeholder="เบอร์เจ้าของร้าน" minlength="10" ng-pattern="/^[0-9]{0,10}$/"   name="phoneno" ng-model="user.owner_phone_number"  required>
+                                    
+                                    <div class="message set-font-11" ng-messages="signupForm.phoneno.$error">  
+                                        <div ng-message-exp="['required','minlength']">
+                                            Phone No. required.
+                                        </div>
+                                    </div>
+                                    <span class="set-font-11" ng-show="signupForm.phoneno.$error.pattern">Not a valid number!</span>
+                                </div>
+                    <div class="form-group sign-status">
+                        <input type="password" class="form-control signup-input" placeholder="Password" name="password" ng-model="user.password"  required>
+                        
+                        <div class="message set-font-11" ng-messages="signupForm.password.$error">  
+                            <div ng-message-exp="['required']">
+                                Password required.
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="vm.alreadyregistered" class="alert alert-danger"> </div>
+                    <div ng-show="vm.registeredSuccessfully" class="alert alert-success"> </div>
+                   
+                    <a><button  type="button" ng-click="signup()"  ng-disabled="signupForm.$invalid" class="log-btn signup-btn" ng-show='vm.showProcessing'  ><b>Sign Up</b></button></a>
+                    <button  type="button" class="log-btn signup-btn" ng-hide='vm.showProcessing'><b>Processing..</b></button>
+                    <div class="">
+                            <h6>Already have account? <a data-ui-sref="login">Login Now</a></h6>
+                            <a href="http://www.shopchapz.com/#/register" class="point-the-pointer">SignUp as User</a>
+                    <!-- <a href="#!login"><label class="ec-mar-top ec-cursor">Login</label></a> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

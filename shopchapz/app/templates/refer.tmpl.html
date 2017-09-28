@@ -1,0 +1,38 @@
+<md-dialog class="referModal"  ng-cloak data-ng-controller="store as vm">
+    <form name="refferForm">
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-content layout-padding>
+                    <div>  
+                        <div ng-show='vm.showAlert'>
+                            <alert type="{{vm.alert.type}}" close="closeAlert($index)">{{vm.alert.msg}}</alert>
+                        </div>
+                        <md-input-container class="md-block">
+                            <label>E-mail*</label>
+                            <input input="text" name="email" class="emailLower" ng-model="vm.sendInvitationLinkObj.email" ng-pattern="/^.+@.+\..+$/" required>
+                            <div class="message" ng-messages="refferForm.email.$error">  
+                                <div ng-message-exp="['required','pattern']">
+                                    Valid e-mail address required.
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <p>Hi,</p>
+                        <p>I would like to invite you to join PoppyQuiz.</p>
+                        <p>PoppyQuiz is a real-time multi-player quiz platform. We can select a topic of our common interest and play against each other during several rounds of timed multiple-choice questions.</p>
+<!--                        <div class="text-center">   
+                            <button class="md-raised seeAllBtn md-button md-ink-ripple refer-join-btn" type="button" ng-transclude=""><span class="ng-scope">Join Now</span></button>
+                        </div>-->
+                        <p>I am really excited. It will be fun to play with you.</p>
+                        <p>Regards</p>
+                        <p>{{vm.sendInvitationLinkObj.username}}</p>
+                        <div layout="row">
+                            <md-button type="submit" class="md-raised seeAllBtn md-button reffersendbtn" ng-disabled="refferForm.$invalid" ng-click="vm.sendInvitationFun()" ng-show='vm.showProcessing' >Send</md-button>
+                            <md-button class="md-raised seeAllBtn md-button reffersendbtn" ng-hide='vm.showProcessing'>Sending..</md-button>
+                            <button class="md-raised  seeAllBtn md-button reffersendbtn" type="button" ng-click="vm.cancel();"><span class="ng-scope">Close</span></button>
+                        </div>
+                    </div>
+                </md-content>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

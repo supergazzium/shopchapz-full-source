@@ -1,0 +1,307 @@
+<div class="store class-due-padding">
+	<div class="container">
+		<div class="left-side col-md-6">
+			<div class="form-group col-md-12  search-field search-field-profile">
+				<input type="text" class="form-control" my-enter="searchValueCall()" ng-model="searchValue" placeholder="Search">
+				<button class="changebtn" type="button" ng-click="searchValueCall()"></button>
+			</div>
+			<div ng-if="overallDetailOfStore.store_details[0].store_logo !== ''" class="store-logo col-md-8 col-sm-9 col-xs-6">
+				<img ng-src="{{overallDetailOfStore.store_details[0].store_logo}}" alt="store-logo">
+			</div>
+			<div ng-if="overallDetailOfStore.store_details[0].store_logo == ''" class="store-no-image store-logo col-md-8 col-sm-9 col-xs-6">
+				<img  class="text-store" ng-src="{{overallDetailOfStore.store_details[0].store_logo}}" alt="{{overallDetailOfStore.store_details[0].store_name}}">
+			</div>
+			<ul class="store-social-icons col-md-4 col-sm-3 col-xs-6">
+				<li class="col-md-6 col-sm-6 col-xs-6 fb-store-icon">
+					<!-- <a href="https://plus.google.com/" class="icons-bg"><img src="app/content/images/google-plus.png" class="share-icon1" ></a> -->
+					<!-- <a ng-click="openReferForm()" class="icons-bg"><img src="app/content/images/google-plus.png" class="share-icon1" ></a> -->
+					
+				</li>
+				<li class="col-md-6 col-sm-6 col-xs-6 fb-store-icon">
+						<a class="facebookShare" facebook-feed-share data-url='{{referUrl}}' data-shares='shares' data-caption='Join with PoppyQuiz'  data-description="Invite your friends to join PoppyQuiz through your unique referral link {{referUrl}}" data-callback='callback'>{{status}}</a>
+						
+						<a gplus data-size="tall" data-annotation="bubble" data-href='{{referUrl}}' data-action='share'></li></a>
+					<!-- <a href="www.facebook.com" class="icons-bg"><img src="app/content/images/facebook.png" class="share-icon1" ></a> -->
+				</li>
+			</ul>
+			<div class="clear-both"></div>
+
+			<section class="store-images slider col-md-12">
+
+				<div ng-hide="imagesarray[0].image == ''" class="slide-image slider-image">
+					<img id="amazon" ng-src="{{imagesarray[0].image}}">
+				</div>
+
+
+				<div ng-hide="imagesarray[1].image == ''" class="slide-image slider-image">
+					<img id="jabong" ng-src="{{imagesarray[1].image}}">
+				</div>
+
+
+				<div ng-hide="imagesarray[2].image == ''" class="slide-image slider-image">
+					<img id="shopclues" ng-src="{{imagesarray[2].image}}">
+				</div>
+
+
+				<div ng-hide="imagesarray[3].image == ''" class="slide-image slider-image">
+					<img id="snapdeal" ng-src="{{imagesarray[3].image}}">
+				</div>
+
+
+				<div ng-hide="imagesarray[4].image == ''" class="slide-image slider-image">
+					<img id="myImg5" ng-src="{{imagesarray[4].image}}">
+				</div>
+
+
+				<div ng-hide="imagesarray[5].image == ''" class="slide-image slider-image">
+					<img id="myImg6" ng-src="{{imagesarray[5].image}}">
+				</div>
+
+			</section>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="img01">
+			<!-- <div id="caption"></div> -->
+		</div>
+
+		<div class="right-side col-md-6">
+			<div class="store-information row">
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].store_name !== null" class="col-md-6"><i class="fa fa-address-book" aria-hidden="true"></i>{{overallDetailOfStore.store_details[0].store_name}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].store_owner_name !== null" class="col-md-6"><i class="fa fa-address-card" aria-hidden="true"></i> {{overallDetailOfStore.store_details[0].store_owner_name}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].product_type !== null" class="col-md-6"><i class="fa fa-product-hunt" aria-hidden="true"></i> {{overallDetailOfStore.store_details[0].product_type}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].id !== null" class="col-md-6"><i class="fa fa-id-badge" aria-hidden="true"></i>{{overallDetailOfStore.store_details[0].id}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].sub_district !== null" class="col-md-6"><i class="fa fa-location-arrow" aria-hidden="true"></i> {{overallDetailOfStore.store_details[0].sub_district}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].district !== null" class="col-md-6"><i class="fa fa-map-marker" aria-hidden="true"></i> {{overallDetailOfStore.store_details[0].district}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.owner_details[0].owner_phone_number !== null" class="col-md-6"><i class="fa fa-mobile" aria-hidden="true"></i> {{overallDetailOfStore.owner_details[0].owner_phone_number}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].store_phone_number !== null" class="col-md-6"><i class="fa fa-phone" aria-hidden="true"></i> {{overallDetailOfStore.store_details[0].store_phone_number}}</p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].line_id !== null" class="col-md-6"><i class="fa fa-commenting-o" aria-hidden="true"></i> <a href="http://{{overallDetailOfStore.store_details[0].line_id}}">{{overallDetailOfStore.store_details[0].line_id}}</a></p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.owner_details[0].email !== null" class="col-md-6"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:{{overallDetailOfStore.owner_details[0].email}}">{{overallDetailOfStore.owner_details[0].email}}</a></p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].facebook_url !== null" class="col-md-6"><i class="fa fa-facebook" aria-hidden="true"></i> <a href="http://{{overallDetailOfStore.store_details[0].facebook_url}}">{{overallDetailOfStore.store_details[0].facebook_url}}</a></p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].instagram_id !== null" class="col-md-6"><i class="fa fa-instagram" aria-hidden="true"></i> <a href="http://{{overallDetailOfStore.store_details[0].instagram_id}}">{{overallDetailOfStore.store_details[0].instagram_id}}</a></p>
+				<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].website !== null" class="col-md-6"><i class="fa fa-link" aria-hidden="true"></i> <a href="{{overallDetailOfStore.store_details[0].website}}">{{overallDetailOfStore.store_details[0].website}}</a></p>
+			</div>
+			<div class="row">
+				<div class="store-description col-md-12">
+					<h4>คำบรรยายร้าน</h4>
+					<p style="word-break:break-all" ng-if="overallDetailOfStore.store_details[0].store_description !== null">
+						{{overallDetailOfStore.store_details[0].store_description}}
+					</p>
+					<p ng-if="overallDetailOfStore.store_details[0].store_description == null || overallDetailOfStore.store_details[0].store_description == '' ">
+						Not Provided
+					</p>
+				</div>
+			</div>
+			<div class="rating-review col-md-12">
+				<h2 class="col-md-9">Ratings & Reviews</h2>
+
+				<button ng-if="loginStatus == false" ng-click="offlineRatingMode()" type="button" class="btn btn-info pull-right">Rate this Store</button>
+				<button ng-if="loginStatus == true" type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#rateStore">Rate this Store</button>
+
+
+				<div class="clearfix"></div>
+				<div ng-show="loginerror" class="alert alert-danger"> </div>
+				<div class="star-ratings col-md-12">
+					<p ng-if="commentsArray[0].avg_rating == null || commentsArray[0].avg_rating == ''">
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</p>
+					<p ng-if="commentsArray[0].avg_rating == 5 || commentsArray[0].avg_rating > 4.5 ">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</p>
+					<p ng-if="commentsArray[0].avg_rating == 4 || commentsArray[0].avg_rating <= 4.5 && commentsArray[0].avg_rating > 3.5">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</p>
+					<p ng-if="commentsArray[0].avg_rating == 3 || commentsArray[0].avg_rating <= 3.5 && commentsArray[0].avg_rating > 2.5 ">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</p>
+					<p ng-if="commentsArray[0].avg_rating == 2 || commentsArray[0].avg_rating <= 2.5 && commentsArray[0].avg_rating > 1.5 ">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</p>
+					<p ng-if="commentsArray[0].avg_rating == 1 || commentsArray[0].avg_rating <= 1.5 && commentsArray[0].avg_rating > 0.5 ">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+						<i class="fa fa-star-o" aria-hidden="true"></i>
+					</p>
+					<p class="total-reviews">(Based on {{commentsArray.length}} Reviews)</p>
+				</div>
+				<div class="clearfix"></div>
+				<div class="users-review-area">
+					<div class="col-md-12">
+						<hr>
+					</div>
+					<div ng-repeat="x in commentsArray | limitTo:reviewcounter" class="user-review">
+						<div class="name col-md-6">
+							<h3>{{x.username}}</h3>
+						</div>
+						<div class="user-rating col-md-6 text-right">
+							<p class="date">{{x.created_on | date:dd-MM-YYYY}}</p>
+							<p ng-if="x.rating == 1">
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+							</p>
+							<p ng-if="x.rating == 2">
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+							</p>
+							<p ng-if="x.rating == 3">
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+							</p>
+							<p ng-if="x.rating == 4">
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+							</p>
+							<p ng-if="x.rating == 5">
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+								<i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+							</p>
+						</div>
+						<div class="clearfix"></div>
+						<div class="review-description col-md-12">
+							<p style="word-break:break-all">{{x.comment}}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+				<div class="col-md-12">
+					<button ng-if="commentsArray.length > 5" type="submit" ng-click="viewallreview()" class="btn btn-large btn-info load-more">View All</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade user-review-popup" id="rateStore" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Rate & Comment</h4>
+				</div>
+				<form name="myForm">
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label for="userReviewRating" class="form-control-label">Rate  </label>
+							<input type="text" class="rate-input-field form-control" id="userReviewRating" name="ratingme" >
+							<p id="ratingRequired"></p>
+							<!-- <h3 ng-bind-html="myHTML"></h3> -->
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" name="comment" ng-model="userComments.comment" rows="5" id="comment" placeholder="Enter your comment"
+							 required></textarea>
+							<span class="error-messages" ng-show="myForm.comment.$touched && myForm.comment.$invalid">
+								<span ng-show="myForm.comment.$error.required">Comment is required!</span>
+						</div>
+
+					</div>
+					<div ng-show="updationerror" class="alert alert-danger"> </div>
+					<div ng-show="updationsuccess" class="alert alert-success"> </div>
+					<div class="modal-footer">
+						<button type="submit" ng-disabled="myForm.$invalid" ng-show="showProcessing" ng-click="submitReviews()" class="btn btn-default submit-button">Submit</button>
+						<button type="submit" class="btn btn-default submit-button" ng-hide="showProcessing"><b>Processing..</b></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the image and insert it inside the modal - use its "alt" text as a caption
+	var img = document.getElementById('amazon');
+	var img2 = document.getElementById('jabong');
+	var img3 = document.getElementById('shopclues');
+	var img4 = document.getElementById('snapdeal');
+	var img5 = document.getElementById('myImg5');
+	var img6 = document.getElementById('myImg6');
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	img.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+	img2.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+	img3.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+	img4.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+	img5.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+	img6.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		// captionText.innerHTML = this.alt;
+	}
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function () {
+		modal.style.display = "none";
+	}
+
+</script>

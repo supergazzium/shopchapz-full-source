@@ -1,0 +1,49 @@
+<div  class="login-background" data-ng-controller="login as vm">﻿
+        <!-- <div  class="login-background" ng-controller="login">﻿ -->
+        <form name="loginForm" ng-submit="login()" novalidate>
+    
+            <div class="login-form-main">
+                <div class="out-logo">
+                    <img src="app/content/images/chapz.jpg" alt=""/>
+                </div>
+   
+                
+                <div class="login-form">
+                    <div class="loginform"><h1>Login Form<i class="fa fa-times" aria-hidden="true"></i></h1></div>
+                    <div class="form-group ">
+                        <input input="email" name="email" type="text" class="form-control" placeholder="Email" ng-model="user.email" ng-pattern="/^.+@.+\..+$/" required>
+                                       
+                        <img class="login-img" src="app/content/images/Login/user.png"/>
+                        <div  class="message set-font-11" ng-messages="loginForm.email.$error">  
+                            <div ng-message-exp="['required','pattern']">
+                                Valid e-mail address required.
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="form-group log-status">
+                        <input type="password" class="form-control" placeholder="Password" name="password" ng-model="user.password"  required>
+                        <img class="login-img" src="app/content/images/Login/security-system.png"/>
+                        <div class="message set-font-11" ng-messages="loginForm.password.$error">  
+                            <div ng-message-exp="['required']">
+                                Password required.
+                            </div>
+                        </div>
+                        <!-- <div>
+                            <label ng-show="vm.wrongCredentials" class="wrong-email-pass">Wrong Email or Password</label>
+                        </div> -->
+                    </div>
+                    <div ng-show="vm.wrongCredentials" class="alert alert-danger"> </div>
+                    <a><button  type="button" ng-click="login()" ng-disabled="loginForm.$invalid" ng-show='vm.showProcessing' class="log-btn login-btn"  ><b>Sign In</b></button></a>
+                    <button  type="button" class="log-btn login-btn" ng-hide='vm.showProcessing'><b>Processing..</b></button>
+                    <!-- <h6>Don't have account? <a data-ui-sref="signup">SignUp Now</a></h6>
+                    <a data-ui-sref="forgot">Forgot Password?</a> -->
+                    <h6>Don't have account? <a data-ui-sref="signup" class="point-the-pointer">SignUp Now</a></h6>
+                    <a data-ui-sref="forgot" class="point-the-pointer">Forgot Password?</a>
+                    <div>
+                    <a href="http://www.shopchapz.com/#/login" class="point-the-pointer">Login as User</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

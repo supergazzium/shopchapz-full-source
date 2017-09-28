@@ -1,0 +1,545 @@
+<div class="header" ng-controller="home as vm">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header col-sm-4 col-xs-4 ">
+
+
+            <img class="mysh img-responsive" src="app/content/images/chapz.jpg" alt="" />
+
+        </div>
+        <div class="col-sm-4 col-xs-4 shop-text">
+            <span class="sethead"> Store Admin </span>
+
+        </div>
+        <div class="col-sm-4 col-xs-4 button-logout">
+            <div class="myshop">
+                <button class="btn btn-default log" ng-click="vm.logout()"> Logout </button>
+            </div>
+        </div>
+
+    </nav>
+    <div>
+
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Update Profile">
+                    <md-content class="md-padding">
+                        <div class="col-sm-7 ec-border">
+                            <form name="updateform" class="form-horizontal" id="wb-shop-margin" action="/action_page.php">
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">ชื่อร้านค้า</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.storename" placeholder="ชื่อร้านค้า"
+                                            id="start-on-padding" name="storename" >
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">ชื่อเจ้าของร้าน</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.shopownername" placeholder="ชื่อเจ้าของร้าน"
+                                            id="start-on-padding" name="shopownername" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">ประเภทสินค้า</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.producttype" placeholder="ประเภทสินค้า"
+                                            id="start-on-padding" name="producttype" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">เลขบัตรประชาชน</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" minlength="13" maxlength="13" ng-model="updateProfileInputs.digitsid"
+                                            placeholder="เลขบัตรประชาชน" id="start-on-padding" name="digitsid" >
+                                        <span class="set-font-11" ng-show="updateform.digitsid.$error.minlength">Not a valid ID</span>
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">อำเภอ</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.subdistrict" placeholder="อำเภอ"
+                                            id="start-on-padding" name="subdistrict" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">จังหวัด</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.district" placeholder="จังหวัด" id="start-on-padding"
+                                            name="district" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">เบอร์เจ้าของร้าน</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" maxlength="12" minlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            ng-model="updateProfileInputs.phonenoowner" placeholder="เบอร์เจ้าของร้าน" id="start-on-padding"
+                                            name="phonenoowner" >
+                                        <span class="set-font-11" ng-show="updateform.phonenoowner.$error.minlength">Not a valid number!</span>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">เบอร์ร้านค้า</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" maxlength="12" minlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            ng-model="updateProfileInputs.phonenostore" placeholder="เบอร์ร้านค้า" id="start-on-padding"
+                                            name="phonenostore" >
+                                        <span class="set-font-11" ng-show="updateform.phonenostore.$error.minlength">Not a valid number!</span>
+                                        
+                                    </div>
+
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">Line ID</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.lineid" placeholder="Line ID" id="start-on-padding"
+                                            name="lineid" >
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">Email</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.email" placeholder="Email" id="start-on-padding"
+                                            name="start-on" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">Facebook URL</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.fburl" placeholder="Facebook URL" id="start-on-padding"
+                                            name="fburl" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">Instagram ID</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.instaurl" placeholder="Instagram ID"
+                                            id="start-on-padding" name="instaurl" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">Website</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <input type="text" class="form-control border-radius-0" ng-model="updateProfileInputs.website" placeholder="Website" id="start-on-padding"
+                                            name="website" >
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wb-shop-margin-bottom">
+                                    <label class="control-label col-sm-3 ec-margin-top-6" for="email">คำบรรยายร้านค้า</label>
+                                    <div class="col-sm-9" id="shop-start-input">
+                                        <textarea type="text" class="form-control resize-description border-radius-0" ng-model="updateProfileInputs.description"
+                                            placeholder="คำบรรยายร้านค้า" id="start-on-padding" name="textarea"></textarea>
+                                       
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+
+
+                        </div>
+
+
+
+                        <div class="col-sm-5">
+                            <div ng-if="storeStatusAD.status == '0'" class="col-sm-12 ec-bottom-margin">
+                                <label>Status:</label>
+                                <label class="shop-status-inactive">Inactive</label>
+                            </div>
+                            <div ng-if="storeStatusAD.status == '1'" class="col-sm-12 ec-bottom-margin">
+                                <label>Status:</label>
+                                <label class="shop-status">Active:</label>
+                                <span class="">On ({{storeStatusAD.active_on | date:'yyyy-MM-dd h:mma' }})</span>
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="example-text-input" class="col-sm-3 col-xs-3">โลโก้ร้านค้า</label>
+                            </div>
+                            <div class="col-sm-10 ">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 logo-width border-radius-20 text-center padding-15">
+                                        <p ng-if="updateProfileInputs.storelogo == ''  " class="click-font click-font-logo">Click to load Your logo</p>
+                                        <label class="file2" title=""> 
+                            <input type="file" id="" accept="image/*" name="image" file-model="vm.logoupload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'Logo image')">
+                             </label>
+                                        <img ng-if="updateProfileInputs.storelogo !== '' && updateProfileInputs.storelogo !== null" class="img-responsive img-border-radius"
+                                            ng-src="{{updateProfileInputs.storelogo}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <!-- <div class="w-37 trash-icon trash-icon-logo trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div> -->
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-12 col-xs-12">
+                                <label for="example-text-input" class="ec-bottom-margin">รูปอื่นๆ</label>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[0].image == '' || imageids[0].image == null " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image"  file-model="vm.relevantImage1Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image1')">
+                         </label>
+                                        <img ng-if="imageids[0].image !== '' && imageids[0].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[0].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if="imageids[0].image !== ''  " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(0)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+                                    <!-- {{imageids[0].image_id}} -->
+                                    <!-- ng-if="imageids[0].image !== '' && imageids[0].image !== null" -->
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[1].image == ''  " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image" file-model="vm.relevantImage2Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image2')">
+                         </label>
+                                        <img ng-if="imageids[1].image !== '' && imageids[1].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[1].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if="imageids[1].image !== ''  " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(1)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6 col-md-offset-2">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[2].image == '' || imageids[2].image == null " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image" file-model="vm.relevantImage3Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image3')">
+                         </label>
+                                        <img ng-if="imageids[2].image !== '' && imageids[2].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[2].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if="imageids[2].image !== ''  " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(2)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[3].image == '' || imageids[3].image == null " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image" file-model="vm.relevantImage4Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image4')">
+                         </label>
+                                        <img ng-if="imageids[3].image !== '' && imageids[3].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[3].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if="imageids[3].image !== '' " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(3)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6 col-md-offset-2">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[4].image == '' || imageids[4].image == null " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image" file-model="vm.relevantImage5Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image5')">
+                         </label>
+                                        <img ng-if="imageids[4].image !== '' && imageids[4].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[4].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if="imageids[4].image !== ''  " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(4)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin ">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-if="imageids[5].image == '' ||imageids[5].image == null " class="click-font">Click to load Your Images</p>
+                                        <label class="file2" title=""> 
+                        <input type="file" id="" accept="image/*" name="image" file-model="vm.relevantImage6Upload" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'relevant image6')">
+                         </label>
+                                        <img ng-if="imageids[5].image !== '' && imageids[5].image !== null" class="img-responsive img-border-radius appendingImages"
+                                            ng-src="{{imageids[5].image}}">
+                                        <!-- <img ng-show="vm.loadingimage" class="img-responsive img-border-radius appendingImages" ng-src="{{vm.loadertype}}"> -->
+                                    </div>
+                                    <div ng-if=" imageids[5].image !== '' " class="w-37 trash-icon trash-icon-position-sm">
+                                        <span ng-click="deleteitem(5)" class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-hide="vm.wishBoxImageLabel1" class="click-font ec-text-hide">Click to load Your Images</p>
+                                        <label class="file2 ec-no-cursor" title=""> 
+                        <input type="file" id="subPicture1" accept="image/*" name="image" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'wishBox image1')">
+                         </label>
+                                        <img class="img-responsive fixed-img" src="app/content/images/shopclues-store.png">
+                                    </div>
+                                    <div class="w-37 trash-icon trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div> -->
+
+                            <!-- <div class=" col-md-5 col-sm-6 col-xs-6 col-md-offset-2">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-hide="vm.wishBoxImageLabel1" class="click-font ec-text-hide">Click to load Your Images</p>
+                                        <label class="file2 ec-no-cursor" title=""> 
+                        <input type="file" id="subPicture1" accept="image/*" name="image" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'wishBox image1')">
+                         </label>
+                                        <img class="img-responsive fixed-img" src="app/content/images/flipkart.jpg">
+                                    </div>
+                                    <div class="w-37 trash-icon trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-hide="vm.wishBoxImageLabel1" class="click-font ec-text-hide">Click to load Your Images</p>
+                                        <label class="file2 ec-no-cursor" title=""> 
+                        <input type="file" id="subPicture1" accept="image/*" name="image" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'wishBox image1')">
+                         </label>
+                                        <img class="img-responsive fixed-img" src="app/content/images/jabong.jpg">
+                                    </div>
+                                    <div class="w-37 trash-icon trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div> -->
+                            <!-- <div class=" col-md-5 col-sm-6 col-xs-6 col-md-offset-2">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-hide="vm.wishBoxImageLabel1" class="click-font ec-text-hide">Click to load Your Images</p>
+                                        <label class="file2 ec-no-cursor" title=""> 
+                        <input type="file" id="subPicture1" accept="image/*" name="image" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'wishBox image1')">
+                         </label>
+                                        <img class="img-responsive fixed-img" src="app/content/images/amazon.jpg">
+                                    </div>
+                                    <div class="w-37 trash-icon trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-md-5 col-sm-6 col-xs-6">
+                                <div class="col-md-12 col-sm-12  col-xs-12 ec-bottom-margin">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 p-l-0 p-r-0 border-red-2 relevant-images-width border-radius-20 text-center padding-15">
+                                        <p ng-hide="vm.wishBoxImageLabel1" class="click-font ec-text-hide">Click to load Your Images</p>
+                                        <label class="file2 ec-no-cursor" title=""> 
+                        <input type="file" id="subPicture1" accept="image/*" name="image" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, '')), angular.element(this).scope().change(this.files, 'wishBox image1')">
+                         </label>
+                                        <img class="img-responsive fixed-img" src="app/content/images/snapdeal.jpg">
+                                    </div>
+                                    <div class="w-37 trash-icon trash-icon-position-sm">
+                                        <span class="glyphicon glyphicon-trash text-center  icon-trash" aria-hidden="true"></span>
+                                    </div>
+
+                                </div>
+                            </div> -->
+
+                            <div class="col-sm-5 col-sm-offset-4 save-btn-padding">
+                                <div ng-show="vm.registeredSuccessfully" style="margin-left:-5px; text-align:center" class="alert alert-success"> </div>
+                                <button ng-show="vm.processingProfile" ng-click="savedetails()" class="btn btn-block save-btn-color">Save</button>
+                                <button ng-hide="vm.processingProfile" class="btn btn-block save-btn-color">Processing...</button>
+                            </div>
+
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab ng-click="getRatingAndReviews()" label="Ratings & Reviews">
+                    <md-content class="md-padding col-sm-offset-2 col-sm-8">
+                        <div>
+                                <div class="overflow-atore-name">
+                                        <label data-toggle="tooltip" data-placement="bottom" title="{{storeName}}"  class="review-name amazon-font">{{storeName}}</label>
+                                    </div>
+                                    
+                            <label class="review-name ">({{noOfClicks}} Clicks)</label>
+                            <span ng-show="ratingIsNull" >
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                            <span ng-hide="ratingIsNull" ng-if="averagerating == 5 || averagerating > 4.5 ">
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                            </span>
+                            <span ng-hide="ratingIsNull" ng-if="averagerating == 4 || averagerating <= 4.5 && averagerating > 3.5 ">
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                            <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                            <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                            <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                        </span>
+                            <span ng-hide="ratingIsNull" ng-if="averagerating == 3 || averagerating > 2.5 &&  averagerating <= 3.5">
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                            </span>
+                            <span ng-hide="ratingIsNull" ng-if="averagerating == 2 || averagerating > 1.5 &&  averagerating <= 2.5 ">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </span>
+                            <span ng-hide="ratingIsNull" ng-if="averagerating == 1 || averagerating > 0.5 &&  averagerating <= 1.5">
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    </span>
+                            <div ng-hide="ratingIsNull" class="align-right-text">
+                                <label>Based on {{ratingLength}} Ratings</label>
+                            </div>
+                            <div ng-show="ratingIsNull" class="align-right-text">
+                                <label>No Ratings Yet</label>
+                            </div>
+                        </div>
+
+                        <h1 class="md-display-1 ec-align-text">Ratings & Reviews</h1>
+                        <div ng-repeat="x in newarray | limitTo: reviewcounter">
+                            <hr>
+                            <div >
+                                <label class="review-name">{{x.username}}</label>
+                                <label class="review-date">{{x.created_on | date:dd-MM-YYYY}}</label>
+                            </div>
+                            <div>
+                                <div  ng-if="x.rating == 1">
+
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </div>
+                                <div  ng-if="x.rating == 2">
+
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </div>
+                                <div ng-if="x.rating == 3">
+
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </div>
+                                <div  ng-if="x.rating == 4">
+
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </div>
+                                <div  ng-if="x.rating == 5">
+
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                    <i class="fa fa-star ec-fa-color" aria-hidden="true"></i>
+                                </div>
+
+
+                            </div>
+                            <div  style="word-break:break-all; margin-top: 20px;">
+                                "{{x.comment}}"
+                            </div>
+                        </div>
+                        <div ng-if="commentLength >= 5" class="view-button">
+                            <button ng-hide="showall" ng-click="viewAllComments()" class="btn view-button-color">View All</button>
+                        </div>
+                        <div ng-if="commentLength" class="view-button">
+                            <button ng-show="showall" ng-click="viewLessComments()" class="btn view-button-color">View Less
+                            </button>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Settings">
+                    <md-content class="md-padding">
+                        <h4 class="md-display-1 ec-align-text">Change Password</h4>
+                        <form name="newPasswordForm" class="form-horizontal col-sm-10" id="wb-shop-margin" action="/action_page.php">
+                            <div class="form-group ec-margin-top-30" id="wb-shop-margin-bottom">
+                                <label class="control-label col-sm-3 ec-margin-top-6" for="email">Old Password</label>
+                                <div class="col-sm-9 pad-left" id="shop-start-input">
+                                    <input type="password" class="form-control border-radius-0" placeholder="Old Password" ng-model="user.old_password" id="start-on-padding"
+                                        name="start-on">
+                                </div>
+                            </div>
+                            <div class="form-group" id="wb-shop-margin-bottom">
+                                <label class="control-label col-sm-3 ec-margin-top-6" for="email">New Password</label>
+                                <div class="col-sm-9 pad-left" id="shop-start-input">
+                                    <input type="password" class="form-control border-radius-0" placeholder="New Password" ng-model="user.new_password" id="start-on-padding"
+                                        name="start-on">
+                                </div>
+                            </div>
+                            <div class="form-group" id="wb-shop-margin-bottom">
+                                <label class="control-label col-sm-3 ec-margin-top-6" for="email">Confirm Password</label>
+                                <div class="col-sm-9 pad-left" id="shop-start-input">
+                                    <input type="password" name="confirmpassword" class="form-control border-radius-0" ng-pattern="{{user.new_password}}" placeholder="Confirm Password"
+                                        ng-model="confirmpassword" id="start-on-padding" name="start-on" required>
+                                    <div ng-messages="newPasswordForm.confirmpassword.$error" role="alert">
+                                        <div ng-message="pattern">
+                                            <span>Password did not match</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div ng-show="vm.wrongPassword" class="alert alert-danger col-sm-9 pad-left right-float"> </div>
+                            <div ng-show="vm.changedSuccessfully" class="alert alert-success col-sm-9 pad-left right-float"> </div>
+
+                            <a href><button  type="button" ng-click="newPasswordRequest()" class="btn change-pass-btn col-sm-9 col-sm-offset-3 col-xs-12" ng-show='vm.showProcessing' ng-disabled="newPasswordForm.$invalid"  ><b>Submit</b></button></a>
+                            <button type="button" class="btn change-pass-btn col-sm-9 col-sm-offset-3 col-xs-12" ng-hide='vm.showProcessing'><b>Processing..</b></button>
+                        </form>
+
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+</div>
